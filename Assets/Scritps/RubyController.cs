@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RubyController : MonoBehaviour
 {
-
+    public int maxHealth = 5;
+    int currentHealth;
     public float speed = 7.0f;
     float horizontal;
     float vertical;
@@ -16,8 +17,8 @@ public class RubyController : MonoBehaviour
     {
         // QualitySettings.vSyncCount = 0;
         // Application.targetFrameRate = 10;   
-        rigidbody2d = GetComponent<Rigidbody2D>();  
-
+        rigidbody2d = GetComponent<Rigidbody2D>();        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -37,6 +38,10 @@ public class RubyController : MonoBehaviour
         transform.position = position;
 
         rigidbody2d.MovePosition(position);
+    }
 
+    void ChangeHealth(int amount) {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + "/" + maxHealth);
     }
 }
