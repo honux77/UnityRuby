@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8979416910857972732}
   - component: {fileID: 3813701309844276923}
   - component: {fileID: 7510992916577055430}
+  - component: {fileID: 2849510187379537953}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -146,3 +147,22 @@ MonoBehaviour:
   speed: 3
   vertical: 1
   changeTime: 2
+--- !u!95 &2849510187379537953
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390788633932721857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f31d742a64f47d543b6e693b5b8e22d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
