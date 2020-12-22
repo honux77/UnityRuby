@@ -14,7 +14,10 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (transform.position.magnitude > 1000.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Launch(Vector2 direction, float force)
@@ -26,6 +29,13 @@ public class Projectile : MonoBehaviour
     {
     //we also add a debug log to know what the projectile touch
     Debug.Log("Projectile Collision with " + other.gameObject);
+
+    ClockController c = other.collider.GetComponent<ClockController>();
+    if (c != null)
+    {
+        c.Fix();
+    }    
+
     Destroy(gameObject);
     }
 }

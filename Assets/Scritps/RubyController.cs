@@ -11,7 +11,6 @@ public class RubyController : MonoBehaviour
     public GameObject projectilePrefab;
     public int projectileForce = 300;
 
-
     float horizontal;
     float vertical;
 

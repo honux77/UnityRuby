@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClockController : MonoBehaviour
 {
+    public bool broken = true;
     public float speed = 3.0f;
     public bool vertical;
 
@@ -15,6 +16,12 @@ public class ClockController : MonoBehaviour
     Rigidbody2D rbody;
     Animator animator;
 
+    public void Fix()
+    {
+        broken = false;
+        rbody.simulated = false;
+        animator.SetTrigger("Fixed");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +43,10 @@ public class ClockController : MonoBehaviour
 
     void Update()
     {
+        if (!broken)
+        {
+            return;
+        }
 
         timer -= Time.deltaTime;
         if (timer < 0)
@@ -47,6 +58,11 @@ public class ClockController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!broken)
+        {
+            return;
+        }
+
         Vector2 position = rbody.position;
 
         if (vertical)
