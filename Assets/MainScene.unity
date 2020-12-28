@@ -8221,6 +8221,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clock
       objectReference: {fileID: 0}
+    - target: {fileID: 7140128638125396668, guid: 8d129a8b43c99a2479d3fc3b5c9f4905,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d129a8b43c99a2479d3fc3b5c9f4905, type: 3}
 --- !u!1001 &6753178274781049378
