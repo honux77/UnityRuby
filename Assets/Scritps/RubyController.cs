@@ -9,7 +9,7 @@ public class RubyController : MonoBehaviour
     public float speed = 7.0f;
     public float timeInvincible = 2.0f;
     public GameObject projectilePrefab;
-    public int projectileForce = 300;
+    public int projectileForce = 600;
 
     float horizontal;
     float vertical;
@@ -55,7 +55,7 @@ public class RubyController : MonoBehaviour
                 isInvincible = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetButton("Jump") || Input.GetMouseButtonDown(0))
         {
             Debug.Log("fire");
             Launch();
