@@ -577,6 +577,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1055991622 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2255237205057749649, guid: 8d129a8b43c99a2479d3fc3b5c9f4905,
+    type: 3}
+  m_PrefabInstance: {fileID: 7026113152679316280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1119124660
 GameObject:
   m_ObjectHideFlags: 0
@@ -7265,6 +7271,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 154331881, guid: 1dbf7934614908041b60bf98538cda35, type: 3}
+      propertyPath: pickupHealth
+      value: 
+      objectReference: {fileID: 5010325176029960729, guid: 2b3c248e0b07aa545886b0318afcf5dd,
+        type: 3}
     - target: {fileID: 4728160889797048248, guid: 1dbf7934614908041b60bf98538cda35,
         type: 3}
       propertyPath: m_Name
@@ -8400,6 +8411,11 @@ PrefabInstance:
       propertyPath: vertical
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7510992916577055430, guid: 8d129a8b43c99a2479d3fc3b5c9f4905,
+        type: 3}
+      propertyPath: smokeEffect
+      value: 
+      objectReference: {fileID: 1055991622}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d129a8b43c99a2479d3fc3b5c9f4905, type: 3}
 --- !u!1001 &7487830436415190486

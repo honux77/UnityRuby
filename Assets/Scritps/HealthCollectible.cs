@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HealthCollectible : MonoBehaviour
 {
+    public ParticleSystem pickupHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +20,12 @@ public class HealthCollectible : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         
-        RubyController controller = other.GetComponent<RubyController>();        
+        RubyController controller = other.GetComponent<RubyController>();                
 
         if (controller != null) {
             if (controller.currentHealth < controller.maxHealth) {
+                Vector2 pos = transform.position;
+                Instantiate(pickupHealth, pos, Quaternion.identity);
                 controller.ChangeHealth(1);
                 Destroy(gameObject);
             } else {
