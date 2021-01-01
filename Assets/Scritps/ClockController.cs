@@ -9,6 +9,7 @@ public class ClockController : MonoBehaviour
     public bool vertical;
 
     public float changeTime = 3.0f;
+    public ParticleSystem smokeEffect;
 
     int direction = 1;
     float timer;
@@ -21,6 +22,7 @@ public class ClockController : MonoBehaviour
         broken = false;
         rbody.simulated = false;
         animator.SetTrigger("Fixed");
+        smokeEffect.Stop();
     }
 
     // Start is called before the first frame update
