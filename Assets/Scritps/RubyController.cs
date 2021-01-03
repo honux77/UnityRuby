@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RubyController : MonoBehaviour
 {
-    public int maxHealth = 7;
-    public int currentHealth = 2;
+    public int maxHealth = 5;
+    public int currentHealth = 5;
     public float speed = 7.0f;
     public float timeInvincible = 2.0f;
     public GameObject projectilePrefab;
@@ -28,7 +28,7 @@ public class RubyController : MonoBehaviour
         // Application.targetFrameRate = 10;   
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+        //UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
 
     // Update is called once per frame
@@ -62,6 +62,19 @@ public class RubyController : MonoBehaviour
             Launch();
         }
 
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButton(1))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+            if (hit.collider != null)
+            {
+                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+                if (character != null)
+                {
+                    character.DisplayDialog();
+                }
+            }
+        }
+
     }
 
     void FixedUpdate()
@@ -85,7 +98,7 @@ public class RubyController : MonoBehaviour
         
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+        //Debug.Log(currentHealth + "/" + maxHealth);
     }
 
     void Launch()
